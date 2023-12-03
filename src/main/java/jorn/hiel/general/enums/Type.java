@@ -1,2 +1,6 @@
-package jorn.hiel.general.enums;public enum Type {
+package jorn.hiel.general.enums;
+
+public enum Type {
+
+    EXAMPLE,CHALLENGEONE,CHALLENGETWO, EXAMPLEB
 }
