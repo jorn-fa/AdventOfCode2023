@@ -9,9 +9,16 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.util.List;
 
-public class DayOne {
+import static jorn.hiel.general.ResultPrinter.printChallenge;
+import static jorn.hiel.general.ResultPrinter.printResult;
 
-    public static void main(String[] args)  {
+
+/**
+ * Day one challenges Advent of Code 2023
+ */
+public class DayOne   {
+
+    public static void main(String[] args) {
         try {
             challengeOne();
             challengeTwo();
@@ -23,10 +30,11 @@ public class DayOne {
 
     /**
      * Find first and last number in given strings and outputs the total sum
-     * @throws URISyntaxException File may not have been copied from site
-     * @throws IOException File may not have been copied from site
+     * @throws URISyntaxException File may not have been copied over from site
+     * @throws IOException File may not have been copied over from site
      */
-    public static void challengeOne() throws URISyntaxException, IOException {
+
+    private static void challengeOne() throws URISyntaxException, IOException {
 
         List<String> source = Files.readAllLines(DayGiver.getFile(Type.CHALLENGEONE, Day.one));
         int counter = 0;
@@ -45,10 +53,17 @@ public class DayOne {
             counter+=Integer.parseInt(cleanedInput);
         }
 
-        System.out.println("total = " + counter);
+        printChallenge(1);
+        printResult(counter);
     }
 
-    static void challengeTwo()throws URISyntaxException, IOException{
+    /**
+     * Find first and last number in given strings and outputs the total sum
+     * However numbers might be written as words aswell
+     * @throws URISyntaxException  File may not have been copied over from site
+     * @throws IOException File may not have been copied over from site
+     */
+    private static void challengeTwo()throws URISyntaxException, IOException{
 
         List<String> source = Files.readAllLines(DayGiver.getFile(Type.CHALLENGEONE, Day.one));
         int counter = 0;
@@ -89,6 +104,7 @@ public class DayOne {
 
 
         }
-        System.out.println("total = " + counter);
+        printChallenge(2);
+        printResult(counter);
     }
 }
